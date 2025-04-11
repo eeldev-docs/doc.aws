@@ -165,6 +165,7 @@ const sidebars = {
               label: 'API Documentation',
               href: 'https://docs.aws.amazon.com/gamelift/'
             },
+            /** 
             {
               type: 'category',
               label: 'Video Tutorials',
@@ -172,7 +173,7 @@ const sidebars = {
                 'plugins/gameliftclient/videos/gamelift_anywhere',
                 'plugins/gameliftclient/videos/gamelift_server',
               ],
-            },
+            },*/
           ],
         },
         {
