@@ -48,49 +48,6 @@ const sidebars = {
       items: [
         {
           type: 'category',
-          label: 'Cloudtrail',
-          link: {type: 'doc', id: 'plugins/cloudtrail/intro'},
-          items: [
-            
-            'plugins/cloudtrail/intro',
-            'plugins/cloudtrail/getting_started',
-            'plugins/cloudtrail/logging',
-            'plugins/cloudtrail/purchase',
-            {
-              type: 'link',
-              label: 'Example Project',
-              href: 'https://github.com/eeldev-ue4/CloudTrail_Example/releases'
-            },
-            {
-              type: 'link',
-              label: 'API Documentation',
-              href: 'https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/Welcome.html'
-            },
-          ],
-        },
-        {
-          type: 'category',
-          label: 'Cloudwatch',
-          link: {type: 'doc', id: 'plugins/cloudwatch/intro'},
-          items: [
-            'plugins/cloudwatch/intro',
-            'plugins/cloudwatch/getting_started',
-            'plugins/cloudwatch/logging',
-            'plugins/cloudwatch/purchase',
-            {
-              type: 'link',
-              label: 'Example Project',
-              href: 'https://github.com/eeldev-ue4/CloudWatch_Example/releases'
-            },
-            {
-              type: 'link',
-              label: 'API Documentation',
-              href: 'https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/Welcome.html'
-            },
-          ],
-        },
-        {
-          type: 'category',
           label: 'Cognito',
           link: {type: 'doc', id: 'plugins/cognito/intro'},
           items: [
@@ -262,69 +219,6 @@ const sidebars = {
               type: 'link',
               label: 'API Documentation',
               href: 'https://docs.aws.amazon.com/s3/latest/api/welcome.html'
-            },
-          ],
-        },
-        {
-          type: 'category',
-          label: 'Secrets Manager',
-          link: {type: 'doc', id: 'plugins/secretsmanager/intro'},
-          items: [
-            'plugins/secretsmanager/intro',
-            'plugins/secretsmanager/getting_started',
-            'plugins/secretsmanager/logging',
-            'plugins/secretsmanager/purchase',
-            {
-              type: 'link',
-              label: 'Example Project',
-              href: 'https://github.com/eeldev-ue4/Secrets_Example/releases'
-            },
-            {
-              type: 'link',
-              label: 'API Documentation',
-              href: 'https://docs.aws.amazon.com/secretsmanager/latest/apireference/Welcome.html'
-            },
-          ],
-        },
-        {
-          type: 'category',
-          label: 'SNS',
-          link: {type: 'doc', id: 'plugins/sns/intro'},
-          items: [
-            'plugins/sns/intro',
-            'plugins/sns/getting_started',
-            'plugins/sns/logging',
-            'plugins/sns/purchase',
-            {
-              type: 'link',
-              label: 'Example Project',
-              href: 'https://github.com/eeldev-ue4/SNS_Example/releases'
-            },
-            {
-              type: 'link',
-              label: 'API Documentation',
-              href: 'https://docs.aws.amazon.com/sns/latest/api/welcome.html'
-            },
-          ],
-        },
-        {
-          type: 'category',
-          label: 'SQS',
-          link: {type: 'doc', id: 'plugins/sqs/intro'},
-          items: [
-            'plugins/sqs/intro',
-            'plugins/sqs/getting_started',
-            'plugins/sqs/logging',
-            'plugins/sqs/purchase',
-            {
-              type: 'link',
-              label: 'Example Project',
-              href: 'https://github.com/eeldev-ue4/SQS_Example/releases'
-            },
-            {
-              type: 'link',
-              label: 'API Documentation',
-              href: 'https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/Welcome.html'
             },
           ],
         },
