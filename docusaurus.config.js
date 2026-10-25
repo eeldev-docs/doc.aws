@@ -2,10 +2,10 @@
 // Note: type annotations allow type checking and IDEs autocompletion
 
 import {themes as prismThemes} from 'prism-react-renderer';
-  
+
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'AWS Documentation by eelDev for eelDev Plugins',
+  title: 'AWS Documentation',
   tagline: 'AWS Documentation by eelDev for eelDev Plugins',
   url: 'https://aws.eeldev.com',
   baseUrl: '/',
@@ -14,9 +14,15 @@ const config = {
   favicon: 'img/eeldev_icon.png',
   organizationName: 'eeldev-docs', // Usually your GitHub org/user name.
   projectName: 'doc.aws', // Usually your repo name.
-  plugins: [require.resolve("docusaurus-plugin-image-zoom")],
   deploymentBranch: 'deployment',
   trailingSlash: false,
+  customFields: {
+    productName: 'AWS',
+  },
+  stylesheets: [
+    'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap',
+  ],
+  plugins: [require.resolve("docusaurus-plugin-image-zoom")],
 
   presets: [
     [
@@ -29,7 +35,7 @@ const config = {
           // Please change this to your repo.
           //editUrl: 'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
         },
-        
+
         //blog: {
         //  showReadingTime: true,
         //  sortPosts: 'ascending'
@@ -52,94 +58,47 @@ const config = {
           // options you can specify via https://github.com/francoischalifour/medium-zoom#usage
           background: {
             light: 'rgb(255, 255, 255)',
-            dark: 'rgb(50, 50, 50)'
+            dark: 'rgb(17, 18, 20)'
           }
         }
       },
+      colorMode: {
+        defaultMode: 'dark',
+        respectPrefersColorScheme: false,
+      },
       navbar: {
-        title: 'Documentation',
-        logo: {
-          alt: 'My Site Logo',
-          src: 'img/eeldev_icon.png',
-        },
-        items: [ 
-          /*
-          {
-            type: 'doc',
-            docId: 'intro',
-            position: 'left',
-            label: 'Tutorial',
-          },
-          */
-          //{to: '/blog', label: 'Changelogs', position: 'left'},
-          { href: 'https://eeldev.com', label: 'eeldev.com' },
-          { href: 'https://www.unrealengine.com/marketplace/slug/655175e6418341be8924dd4108d7dd9f', label: 'Unreal Marketplace' },
-          { href: 'https://www.youtube.com/channel/UC6Rhr_F5BxwfTtcADVPUNYA', label: 'YouTube', position: 'right' },
-          { href: 'https://discord.gg/3Yu7pEy', label: 'Discord', position: 'right'},
-          { href: 'https://twitter.com/dryeeldev', label: 'Twitter', position: 'right' },
+        items: [
+          { href: 'https://eeldev.com', label: 'Website', position: 'right' },
         ],
       },
       footer: {
         style: 'dark',
         links: [
-          /** 
           {
-            title: 'Docs',
+            title: 'eelDev',
             items: [
-              {
-                label: 'Tutorial',
-                to: '/docs/intro',
-              },
+              { label: 'Website', href: 'https://eeldev.com' },
+              { label: 'GameLift Client on Fab', href: 'https://www.fab.com/listings/44f68159-2c76-47f0-947f-86a980a0b410' },
+              { label: 'GameLift Server on Fab', href: 'https://www.fab.com/listings/cd85240d-69d1-4810-980c-e9f2bae2d544' },
             ],
           },
-          */
-         /*
           {
             title: 'Community',
             items: [
-              {
-                label: 'YouTube',
-                href: 'https://www.youtube.com/channel/UC6Rhr_F5BxwfTtcADVPUNYA',
-              },
-              {
-                label: 'Discord',
-                href: 'https://discord.gg/3Yu7pEy',
-              },
-              {
-                label: 'Twitter',
-                href: 'https://twitter.com/dryeeldev',
-              },
+              { label: 'Discord', href: 'https://discord.gg/3Yu7pEy' },
+              { label: 'YouTube', href: 'https://www.youtube.com/channel/UC6Rhr_F5BxwfTtcADVPUNYA' },
+              { label: 'Twitter', href: 'https://twitter.com/dryeeldev' },
             ],
           },
-          */
-
-
-          /*
-          {
-            title: 'More',
-            items: [
-              {
-                label: 'Blog',
-                to: '/blog',
-              },
-              {
-                label: 'GitHub',
-                href: 'https://github.com/facebook/docusaurus',
-              },
-            ],
-          },
-          */
         ],
         copyright: `Copyright © ${new Date().getFullYear()} eelDev AB`,
       },
       prism: {
         theme: prismThemes.github,
-        darkTheme: prismThemes.dracula,
+        darkTheme: prismThemes.vsDark,
       },
-      
     }
     ),
 };
 
 export default config;
-

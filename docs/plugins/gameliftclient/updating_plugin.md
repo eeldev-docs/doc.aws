@@ -1,21 +1,24 @@
 ---
-sidebar_position: 2
+sidebar_position: 3
+sidebar_label: Updating the Plugin
+description: How to update the GameLift Client plugin with a clean install.
 ---
 
 # Updating the Plugin
-- The Epic Launcher sometimes does not update plugins properly and in most cases it's best to do a clean install of the plugin instead of updating it
 
-## Remove old plugin
-- Click on Installed Plugins for your Engine version
+The Epic Games Launcher does not always update plugins properly. A clean install is the safest way to update.
 
-![Image](../../../static/img/gameliftclient/updating/3.png)
+## Remove the old plugin from the engine
+Open **Installed Plugins** for your engine version in the launcher and remove the plugin.
 
-![Image](../../../static/img/gameliftclient/updating/2.png)
+![Installed Plugins in the launcher](../../../static/img/gameliftclient/updating/3.png)
 
-## Deleting the plugin
-- Delete the plugin from your projects **Plugins** folder
+![Remove the plugin](../../../static/img/gameliftclient/updating/2.png)
 
-![Image](../../../static/img/gameliftclient/updating/1.png)
+## Delete the plugin from your project
+Delete the plugin folder from the **Plugins** folder of your project.
 
-# Updating the Plugin
-- After following the steps above use the Epic Launcher to Install the plugin again, you can follow the [**install instructions here**](./installing_plugin.md)
+![Delete the plugin from the project](../../../static/img/gameliftclient/updating/1.png)
+
+## Install the new version
+Install the plugin again from the launcher and follow the [install instructions](/plugins/gameliftclient/installing_plugin).

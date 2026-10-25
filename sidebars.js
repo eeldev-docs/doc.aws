@@ -11,23 +11,39 @@
 
 // @ts-check
 
+const productSwitcher = `
+<details class="eel-product-switcher">
+  <summary>AWS</summary>
+  <div class="eel-product-switcher__menu">
+    <a class="eel-product-switcher__item" href="https://steamcore-pro.eeldev.com">SteamCore PRO</a>
+    <a class="eel-product-switcher__item" href="https://serveradmincore.eeldev.com">Server Admin Core</a>
+    <a class="eel-product-switcher__item" href="https://hostmigrationcore.eeldev.com">HostMigrationCore</a>
+    <a class="eel-product-switcher__item" href="https://eoscore.eeldev.com">EOSCore</a>
+    <a class="eel-product-switcher__item" href="https://eventdispatcher.eeldev.com">EventDispatcher</a>
+    <a class="eel-product-switcher__item" href="https://foliageplugin.eeldev.com">Foliage Plugin</a>
+    <a class="eel-product-switcher__item" href="https://cls.eeldev.com">CommonLoadingScreen</a>
+    <a class="eel-product-switcher__item eel-product-switcher__item--active" href="/">AWS</a>
+    <a class="eel-product-switcher__item" href="https://eeldev.com" target="_blank" rel="noopener noreferrer">All eelDev plugins ↗</a>
+  </div>
+</details>`;
+
 /** @type {import('@docusaurus/plugin-content-docs').SidebarsConfig} */
 const sidebars = {
   // By default, Docusaurus generates a sidebar from the docs folder structure
   steamCoreSidebar: [
     {
+      type: 'html',
+      value: productSwitcher,
+      defaultStyle: false,
+    },
+    {
       type: 'doc',
       id: 'introduction'
     },
     {
-      type: 'html',
-      value: '<hr />',
-      defaultStyle: false,
-    },
-    {
       type: 'category',
       label: 'Plugins',
-      collapsible: true,
+      collapsible: false,
       collapsed: false,
       items: [
         {
@@ -121,8 +137,13 @@ const sidebars = {
           link: {type: 'doc', id: 'plugins/gameliftclient/intro'},
           items: [
             'plugins/gameliftclient/intro',
+            'plugins/gameliftclient/installing_plugin',
+            'plugins/gameliftclient/updating_plugin',
             'plugins/gameliftclient/getting_started',
+            'plugins/gameliftclient/sessions_and_matchmaking',
+            'plugins/gameliftclient/blueprint_nodes',
             'plugins/gameliftclient/logging',
+            'plugins/gameliftclient/faq',
             'plugins/gameliftclient/purchase',
             {
               type: 'link',
@@ -132,7 +153,7 @@ const sidebars = {
             {
               type: 'link',
               label: 'API Documentation',
-              href: 'https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/Welcome.html'
+              href: 'https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html'
             },
             {
               type: 'category',
@@ -150,10 +171,14 @@ const sidebars = {
           link: {type: 'doc', id: 'plugins/gameliftserver/intro'},
           items: [
             'plugins/gameliftserver/intro',
-            'plugins/gameliftserver/using_plugin',
             'plugins/gameliftserver/installing_plugin',
             'plugins/gameliftserver/updating_plugin',
+            'plugins/gameliftserver/using_plugin',
+            'plugins/gameliftserver/gamelift_anywhere',
+            'plugins/gameliftserver/game_mode',
+            'plugins/gameliftserver/blueprint_nodes',
             'plugins/gameliftserver/logging',
+            'plugins/gameliftserver/faq',
             'plugins/gameliftserver/purchase',
             {
               type: 'link',
@@ -163,7 +188,7 @@ const sidebars = {
             {
               type: 'link',
               label: 'API Documentation',
-              href: 'https://docs.aws.amazon.com/gamelift/'
+              href: 'https://docs.aws.amazon.com/gamelift/latest/developerguide/integration-server-sdk5-cpp-actions.html'
             },
             /** 
             {
@@ -349,13 +374,8 @@ const sidebars = {
     },
     {
       type: 'html',
-      value: '<hr />',
+      value: '<div class="eel-sidebar-section">General Docs</div>',
       defaultStyle: false,
-    },
-    {
-      type: 'html',
-      value: 'General Docs',
-      defaultStyle: true,
     },
     {
       type: 'doc',
