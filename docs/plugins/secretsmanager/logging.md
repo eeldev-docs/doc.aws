@@ -1,9 +1,0 @@
-# Logging
-
-- If you want more logging output in your project, you can add the following lines to your DefaultEngine.ini configuration file.
-
-## DefaultEngine.ini
-```
-[Core.Log]
-LogAwsSecretsManager=Verbose
-```
