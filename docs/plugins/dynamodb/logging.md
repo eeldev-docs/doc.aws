@@ -1,9 +1,14 @@
+---
+sidebar_position: 4
+sidebar_label: Logging
+description: Turn on verbose logging for the DynamoDB plugin.
+---
+
 # Logging
 
-- If you want more logging output in your project, you can add the following lines to your DefaultEngine.ini configuration file.
+The plugin logs to the `LogAwsDynamoDB` category. Errors are always logged. To see everything the plugin does, add this to `Config/DefaultEngine.ini`:
 
-## DefaultEngine.ini
-```
+```ini
 [Core.Log]
 LogAwsDynamoDB=Verbose
 ```

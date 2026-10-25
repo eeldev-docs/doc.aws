@@ -27,4 +27,4 @@ No server process on the fleet is free. Check that the fleet is **ACTIVE**, that
 - Check that the port is open in the fleet's port settings, or in the firewall for an Anywhere fleet.
 
 ## Can I use the plugin in a shipped game client?
-Yes, but don't ship long-lived access keys. Use temporary credentials from Cognito or STS with a policy that only allows the actions players need, or call GameLift from your own backend.
+Yes, but don't ship long-lived access keys. Use temporary credentials from a Cognito identity pool with a policy that only allows the actions players need, or call GameLift from your own backend.

@@ -16,7 +16,7 @@ Call **Create Game Lift Object** with:
 
 | Input | Description |
 |---|---|
-| Credentials | **Access Key Id** and **Secret Key** of the IAM user. Add a **Session Token** if you use temporary credentials, for example from STS or Cognito. |
+| Credentials | **Access Key Id** and **Secret Key** of the IAM user. Add a **Session Token** if you use temporary credentials, for example from Cognito. |
 | Client Configuration | The **Region** of your fleets, for example `eu-central-1`. The other settings are timeouts, proxy and endpoint options, and can be left at their defaults. |
 | Callback | An event that is called when the client object is ready. |
 

@@ -1,9 +1,24 @@
+---
+sidebar_position: 4
+sidebar_label: Logging
+description: Turn on verbose logging for the Cognito plugin.
+---
+
 # Logging
 
-- If you want more logging output in your project, you can add the following lines to your DefaultEngine.ini configuration file.
+The plugin logs to three categories:
 
-## DefaultEngine.ini
-```
+| Category | Used by |
+|---|---|
+| `LogCognito` | User pool nodes |
+| `LogCognitoIdentity` | Identity pool nodes |
+| `LogCognitoPlatform` | Creating the client objects |
+
+Errors are always logged. To see everything the plugin does, add this to `Config/DefaultEngine.ini`:
+
+```ini
 [Core.Log]
-LogAwsCognito=Verbose
+LogCognito=Verbose
+LogCognitoIdentity=Verbose
+LogCognitoPlatform=Verbose
 ```

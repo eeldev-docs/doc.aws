@@ -53,6 +53,7 @@ const sidebars = {
           items: [
             'plugins/cognito/intro',
             'plugins/cognito/getting_started',
+            'plugins/cognito/sign_in',
             'plugins/cognito/logging',
             'plugins/cognito/purchase',
             {
@@ -74,6 +75,7 @@ const sidebars = {
           items: [
             'plugins/dynamodb/intro',
             'plugins/dynamodb/getting_started',
+            'plugins/dynamodb/items',
             'plugins/dynamodb/logging',
             'plugins/dynamodb/purchase',
             {
@@ -165,6 +167,7 @@ const sidebars = {
           items: [
             'plugins/lambda/intro',
             'plugins/lambda/getting_started',
+            'plugins/lambda/invoking',
             'plugins/lambda/logging',
             'plugins/lambda/purchase',
             {
@@ -175,7 +178,7 @@ const sidebars = {
             {
               type: 'link',
               label: 'API Documentation',
-              href: 'https://docs.aws.amazon.com/lambda/latest/dg/welcome.html'
+              href: 'https://docs.aws.amazon.com/lambda/latest/api/welcome.html'
             },
           ],
         },
@@ -186,6 +189,7 @@ const sidebars = {
           items: [
             'plugins/polly/intro',
             'plugins/polly/getting_started',
+            'plugins/polly/text_to_speech',
             'plugins/polly/logging',
             'plugins/polly/purchase',
             {
@@ -196,7 +200,7 @@ const sidebars = {
             {
               type: 'link',
               label: 'API Documentation',
-              href: 'https://docs.aws.amazon.com/polly/latest/dg/what-is.html'
+              href: 'https://docs.aws.amazon.com/polly/latest/dg/API_Reference.html'
             },
           ],
         },
@@ -207,7 +211,8 @@ const sidebars = {
           items: [
             'plugins/s3/intro',
             'plugins/s3/getting_started',
-            'plugins/s3/large_files',    
+            'plugins/s3/files',
+            'plugins/s3/large_files',
             'plugins/s3/logging',
             'plugins/s3/purchase',
             {
@@ -218,49 +223,7 @@ const sidebars = {
             {
               type: 'link',
               label: 'API Documentation',
-              href: 'https://docs.aws.amazon.com/s3/latest/api/welcome.html'
-            },
-          ],
-        },
-        {
-          type: 'category',
-          label: 'STS',
-          link: {type: 'doc', id: 'plugins/sts/intro'},
-          items: [
-            'plugins/sts/intro',
-            'plugins/sts/getting_started',
-            'plugins/sts/logging',
-            'plugins/sts/purchase',
-            {
-              type: 'link',
-              label: 'Example Project',
-              href: 'https://github.com/eeldev-ue4/STS_Example/releases'
-            },
-            {
-              type: 'link',
-              label: 'API Documentation',
-              href: 'https://docs.aws.amazon.com/STS/latest/APIReference/welcome.html'
-            },
-          ],
-        },
-        {
-          type: 'category',
-          label: 'Translate',
-          link: {type: 'doc', id: 'plugins/translate/intro'},
-          items: [
-            'plugins/translate/intro',
-            'plugins/translate/getting_started',
-            'plugins/translate/logging',
-            'plugins/translate/purchase',
-            {
-              type: 'link',
-              label: 'Example Project',
-              href: 'https://github.com/eeldev-ue4/Translate_Example/releases'
-            },
-            {
-              type: 'link',
-              label: 'API Documentation',
-              href: 'https://docs.aws.amazon.com/translate/latest/APIReference/welcome.html'
+              href: 'https://docs.aws.amazon.com/AmazonS3/latest/API/Welcome.html'
             },
           ],
         },
@@ -274,6 +237,10 @@ const sidebars = {
     {
       type: 'doc',
       id: 'creating_user'
+    },
+    {
+      type: 'doc',
+      id: 'installing_plugin'
     },
     {
       type: 'doc',

@@ -1,65 +1,77 @@
 ---
 sidebar_position: 2
+sidebar_label: Creating a User
+description: Create an IAM user and an access key for the eelDev AWS plugins.
 ---
 
 # Creating a User
 
-### Login to AWS Console: https://console.aws.amazon.com/
+The plugins call AWS with the credentials of an IAM user. This page creates a user with an access key. The screenshots use GameLift, but the steps are the same for every service.
 
-### Go to IAM
-![Image](../static/img/iam.png)
-
-### Click on Users
-![Image](../static/img/iam_2.png)
-
-### Click on Create user
-![Image](../static/img/iam_3.png)
-
-## Give your user a name
-![Image](../static/img/iam_4.png)
-
-## Select "Attach policies directly"
-![Image](../static/img/iam_5.png)
-
-## Review the user and click on Create user 
-![Image](../static/img/iam_6.png)
-
-## Click on the user we just created
-![Image](../static/img/iam_7.png)
-
-## Click on "Add permissions" and "Create inline policy"
-![Image](../static/img/iam_8.png)
-
-## Search for the service you want to add, ie gamelift
-![Image](../static/img/iam_9.png)
-
-## Select all permissions and Allow
-:::danger
-In this example we're granting ALL permissions to the gamelift user and the gamelift service, this is not recommended for a release build of your product, for better security select only the permissions that is required for your particular case. **This is for demonstration purposes only!**
+:::tip
+For a shipped game client, don't use a long-lived access key. Use temporary credentials from a [Cognito identity pool](/plugins/cognito/sign_in), or call AWS from your own backend.
 :::
-![Image](../static/img/iam_10.png)
 
-## Select "All" resources and click on Next
+## Open IAM
+Log in to the [AWS Console](https://console.aws.amazon.com/) and open **IAM**.
+
+![Open IAM](../static/img/iam.png)
+
+## Create the user
+Click **Users**, then **Create user**.
+
+![Users](../static/img/iam_2.png)
+
+![Create user](../static/img/iam_3.png)
+
+Give the user a name.
+
+![User name](../static/img/iam_4.png)
+
+Select **Attach policies directly**, then review and create the user.
+
+![Attach policies directly](../static/img/iam_5.png)
+
+![Review and create](../static/img/iam_6.png)
+
+## Give the user permissions
+Open the user you created, click **Add permissions** and **Create inline policy**.
+
+![Open the user](../static/img/iam_7.png)
+
+![Create inline policy](../static/img/iam_8.png)
+
+Search for the service you want to use, for example GameLift, S3 or DynamoDB.
+
+![Select the service](../static/img/iam_9.png)
+
+Select the actions and resources the user needs.
+
 :::danger
-In this example we're granting ALL permissions to the gamelift user and the gamelift service, this is not recommended for a release build of your product, for better security select only the permissions that is required for your particular case. **This is for demonstration purposes only!**
+The screenshots allow **all** actions on **all** resources. That is only for testing. In a release, only allow the actions and resources your game actually uses.
 :::
-![Image](../static/img/iam_11.png)
 
-## Review and create
-![Image](../static/img/iam_12.png)
+![Select actions](../static/img/iam_10.png)
 
-## Click on Security Credentials
-![Image](../static/img/iam_13.png)
+![Select resources](../static/img/iam_11.png)
+
+Review and create the policy.
+
+![Review and create the policy](../static/img/iam_12.png)
 
 ## Create an access key
-![Image](../static/img/iam_14.png)
+Open **Security credentials** and click **Create access key**.
 
-## Make sure you read and understand the consequences of access keys
-![Image](../static/img/iam_15.png)
+![Security credentials](../static/img/iam_13.png)
 
-![Image](../static/img/iam_16.png)
+![Create access key](../static/img/iam_14.png)
 
-## Make sure you save the keys by downloading the .cvs file
-- These values will be used when initializing the aws plugin
+Read the warning about access keys and continue.
 
-![Image](../static/img/iam_17.png)
+![Access key warning](../static/img/iam_15.png)
+
+![Access key options](../static/img/iam_16.png)
+
+Download the `.csv` file. The **Access Key Id** and **Secret Key** in it are what you use when you [create the client object](/initializing_plugin). The secret key can't be shown again later.
+
+![Download the keys](../static/img/iam_17.png)

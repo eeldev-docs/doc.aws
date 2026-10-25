@@ -31,7 +31,7 @@ The plugin is built on the **AWS SDK for C++ 1.11**.
 You need both plugins for [GameLift Anywhere](/plugins/gameliftserver/gamelift_anywhere) when the server registers itself, because only the Client plugin can register a compute and get an auth token.
 
 :::warning
-The Client plugin signs every request with AWS credentials. Don't ship access keys in a game client that you give to players. In a live game, call GameLift from a backend, or give players temporary credentials with Cognito or STS that only allow the actions they need.
+The Client plugin signs every request with AWS credentials. Don't ship access keys in a game client that you give to players. In a live game, call GameLift from a backend, or give players temporary credentials with a Cognito identity pool that only allow the actions they need.
 :::
 
 <Tabs>

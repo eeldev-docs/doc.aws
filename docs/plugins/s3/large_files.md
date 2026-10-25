@@ -1,25 +1,35 @@
 ---
-sidebar_position: 8
+sidebar_position: 4
+sidebar_label: Downloading Large Files
+description: Download large S3 files in chunks with Range, with progress and resume.
 ---
 
 # Downloading Large Files
 
-## Downloading Large Files
-:::note
-This requires S3 1.3.2, it will not work in previous plugin versions!
+**Get Object** loads the whole download into memory before it writes it to disk. For files of 100 MB or more, download them in chunks with **Range** instead. That also lets you show progress and resume a download.
+
+## Range
+Set **Range** to `bytes=from-to`. This downloads the first 1024 bytes:
+
+```
+bytes=0-1023
+```
+
+![Range](../../../static/img/s3/bytes.png)
+
+When **Range** is set, Get Object **appends** the bytes to the file instead of replacing it.
+
+:::warning
+Delete the file before you start a new chunked download. Otherwise the first chunk is appended to the old file.
 :::
 
-- To download large files (100mb or greater) it’s a good idea to split up the downloads into smaller chunks as downloads are loaded into memory before writing to disk, it’ll also allow you to resume downloads and get download progress.
+## Example
+This example downloads `my_file.zip` in 100 MB chunks (100000000 bytes) to `D:\downloads\my_file.zip`.
 
-- To download specific bytes of a file we specify “bytes=from-to” and S3 will download the first 1024 bytes of a file.
+![Download the first chunk](../../../static/img/s3/download_1.png)
 
-![Image](../../../static/img/s3/bytes.png)
+In the callback, it checks the size of the file on disk with **File Size On Disk**. If there is more to download, it calls Get Object again from that size, so the next chunk is 100–200 MB, and so on. Use **Head Object** first to get the total size, and divide the file size by it for progress.
 
-### Example 
-- This is a working example where we download 100MB “chunks” (100000000 bytes) of the .zip file “my_file.zip“, the file will be saved to d:\downloads\my_file.zip
+![Download the next chunk](../../../static/img/s3/download_2.png)
 
-![Image](../../../static/img/s3/download_1.png)
-
-- On callback the async function will write to disk and check the current file size, if there is data remining to download we will loop back and run the GetObject function again to continue downloading from where we left off (in this case we just donwloaded 0-100MB and the next will be 100-200MB)
-
-![Image](../../../static/img/s3/download_2.png)
+To resume a download later, start from the size of the file that is already on disk.
